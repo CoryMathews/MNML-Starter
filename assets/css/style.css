@@ -162,12 +162,70 @@ p img { margin: 0; }
     ul.navigation li ul li a:hover {  }
 
   /* forms */
-	fieldset {
-		border:0;
-		margin:0;
-		padding:0;
-	}
-	legend { font-weight:normal; }
+    .formitem, .formitem * { 
+        -moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+		display:inline-block;
+		margin-right:-.5em;
+		vertical-align:top;
+    }
+    .formitem { 
+        width:100%;
+        padding:5px;
+        margin-bottom:7px;
+    }
+	.formitem label {
+        text-align:right;
+        padding:5px 25px 0 0;
+        width:33%;
+    }
+    .formitem .inp {
+        width:66%;
+    }
+    .formitem .inp input {
+        background-color: #FFF;
+        border:1px solid #ccc;
+        box-shadow: inset 0 1px 1px #F9F9F9;
+        border-radius: 3px;
+        color: #555;
+        margin-bottom:9px;
+        padding: 4px 6px;
+        width:100%;
+        max-width:450px;
+    }
+    
+    .formitem label.checkbox { 
+        padding-left:20px; 
+    }
+    input[type=checkbox] {
+        float:left;
+        width:auto;
+        margin:4px 0 0 -20px;
+    }
+    .formitem input[type=submit] {
+        margin-left:33%;
+    }
+    input[type=submit], .btn { 
+        background-color:#F5F5F5; 
+        background-image:-webkit-linear-gradient(top, #FFFFFF, #E6E6E6);
+        background-image:-moz-linear-gradient(top, #FFFFFF, #E6E6E6);
+        background-image:-ms-linear-gradient(top, #FFFFFF, #E6E6E6);
+        background-image:-o-linear-gradient(top, #FFFFFF, #E6E6E6);
+        background-image:linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+        border:1px solid #dbdada;
+        border-bottom: 1px solid #b6b6b6;
+        border-radius: 4px;
+        box-shadow: rgba(255, 255, 255, 0.196) 0 1px 0 0 inset, rgba(0, 0, 0, 0.047) 0 1px 2px 0;
+        color: #333;
+        cursor: pointer;
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 4px 14px;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.749);
+        vertical-align: middle;
+    }
 
 /* Fonts 
 ================================================== */
