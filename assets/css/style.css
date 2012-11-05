@@ -7,10 +7,10 @@
 /* Base 
 ================================================== */
 	/* general */
-		body { font:18px "OpenSans", Helvetica, Arial, sans-serif; }
+		body, input { font:16px "OpenSans", Helvetica, Arial, sans-serif; line-height:1.5em; }
 		::selection{ text-shadow:none; }
 
-		p { margin: 0 0 20px 0; }
+		p { padding:.25rem 0; }
 		p img { margin: 0; }
 		
 		a { text-decoration: underline; }
@@ -18,29 +18,44 @@
 
 		address {
 		  display: block;
-		  margin-bottom: 20px;
+		  margin-bottom:1rem;
 		  font-style: normal;
-		  line-height: 20px;
-		}		
+		  line-height: 1.25rem;
+		}
+
+		ul li { list-style:disc; }
+
+		dt { font-weight:bold; }
+		dd { margin-left:1rem; }
+
+		code, pre {
+			padding:.1rem .3rem;
+			font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+			background-color: #eee;
+		}
+
+		pre {
+			display: block;
+			font-size: .8rem;
+			background-color: #eee;
+			overflow-y:scroll;
+			max-height:20rem;
+		}
 
 	/* blockquote */
 		blockquote {
-		  padding: 0 0 0 15px;
-		  margin: 0 0 20px;
-		  border-left: 5px solid #eeeeee;
+		  padding: 0 0 0 1rem;
+		  margin: 0 0 1rem;
+		  border-left:5px solid #eee;
 		}
 
 		blockquote p {
 		  margin-bottom: 0;
-		  font-size: 16px;
-		  font-weight: 300;
-		  line-height: 25px;
 		}
 
 		blockquote small {
 		  display: block;
-		  line-height: 20px;
-		  color: #999999;
+		  color: #999;
 		}
 
 		blockquote small:before {
@@ -49,7 +64,7 @@
 
 		blockquote.pull-right {
 		  float: right;
-		  padding-right: 15px;
+		  padding-right: 1rem;
 		  padding-left: 0;
 		  border-right: 5px solid #eeeeee;
 		  border-left: 0;
@@ -59,48 +74,28 @@
 		blockquote.pull-right small {
 		  text-align: right;
 		}
-
-		blockquote.pull-right small:before {
-		  content: '';
-		}
-
-		blockquote.pull-right small:after {
-		  content: '\00A0 \2014';
-		}
 	
   	/* #Typography */
 		h1, h2, h3, h4, h5, h6 { 
-			font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif; 
-			font-weight: normal; 
+			font-weight:normal;
 		}
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+
 		h1 {
-			font-size:46px;
-			line-height:50px;
-			margin-bottom: 14px;
+			font-size: 2.2rem;
+			margin:2.2rem 0 1.1rem 0;
 		}
 		h2 {
-			font-size:35px;
-			line-height:40px;
-			margin-bottom:10px;
+			font-size: 1.6rem;
+			margin:1.6rem 0 .8rem 0;
 		}
 		h3 { 
-			font-size:28px;
-			line-height:34px;
-			margin-bottom:8px;
+			font-size: 1.45rem;
+			margin:1.45rem 0 .7rem 0;
 		}
-		h4 { 
-			font-size:21px;
-			line-height:30px;
-			margin-bottom:4px;
-		}
-		h5 { 
-			font-size:17px;
-			line-height:24px;
-		}
-		h6 { 
-			font-size:14px;
-			line-height: 21px;
+		h4, h5, h6 { 
+			font-size: 1.2rem;
+			margin:1.2rem 0 .6rem 0;
 		}
 	
 /* State 
@@ -154,28 +149,28 @@
 		.w80.pad, 
 		.w66.pad, 
 		.w50.pad, 
-		.w33.pad, 
+		.w34.pad, 
 		.w25.pad, 
 		.w20.pad { padding:1%; }
 		.w100,
 		.w80, 
 		.w66, 
 		.w50, 
-		.w33, 
+		.w34, 
 		.w25, 
 		.w20 { 
 			-moz-box-sizing:border-box;
 			-webkit-box-sizing:border-box;
 			box-sizing:border-box;
 			display:inline-block;
-			margin-right:-.5em;
+			margin-right:-.24rem; /* hackityhackhack */
 			vertical-align:top;
 		}
 		.w100 { width:100%; }
 		.w80 { width:80%; }
 		.w66 { width:66%; }
 		.w50 { width:50%; }
-		.w33 { width:33%; }
+		.w34 { width:34%; }
 		.w25 { width:25%; }
 		.w20 { width:20%; }
 
@@ -335,23 +330,23 @@
 		}
 
 	/* Desktop */
-		@media only screen and (max-width: 1280px) { 
+		@media (max-width: 1280px) { 
 			.box { max-width:1000px; }
 		}
 
 	/* Tablet landscape/Netbook */
-		@media only screen and (max-width: 1024px) { 
+		@media (max-width: 1024px) { 
 			.box { max-width:1000px; }
 		}
 
 	/* Tablet portrait */
-		@media only screen and (max-width: 768px) { 
+		@media (max-width: 768px) { 
 			.box { max-width:768px; }
 			nav[role="navigation"] li a { padding:5px; }
 		}
 
 	/* Small tablet */
-		@media only screen and (max-width: 600px) { 
+		@media (max-width: 600px) { 
 			.box { max-width:600px; }
 			.w33, .w66 {width:100%;}
 			nav[role="navigation"] li a { 
@@ -365,12 +360,12 @@
 		}
 
 	/* Mobile landscape */
-		@media only screen and (max-width: 480px) { 
+		@media (max-width: 480px) { 
 			.box { max-width:480px; }
 			.w50 { width:100%; }
 		}
 
 	/* Mobile portrait */
-		@media only screen and (max-width: 320px) { 
+		@media (max-width: 320px) { 
 			.box { max-width:320px; }
 		}
