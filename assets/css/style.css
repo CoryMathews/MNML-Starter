@@ -120,7 +120,7 @@
 
 	/* Colors */
 		.info { background-color: #468847; }
-		.inverse { background-color: #333; }
+		.inverse { background-color: #333; color:#fff; }
 		.important { background-color: #b94a48; }
 		.neutral { background-color: #eee; }
 		.success { background-color: #3a87ad; }
@@ -134,23 +134,35 @@
 		.text-warning { color: #f89406; }
 
 	/* Messages */
+		.error, .success, .warning {
+			-moz-box-sizing:border-box;
+	      	webkit-box-sizing:border-box;
+	      	box-sizing:border-box;
+		}
 		.error {
 			background:#f5d4d4;
 			border:1px solid #f00;
 			border-width:1px 0;
 			color:#333;
-			margin:5px;
-			padding:8px 0;
+			margin:5px 0;
+			padding:1rem;
 		}
 		.success {
 			background:#b7d1e1;
 			border:1px solid #4b8db3;
 			border-width:1px 0;
 			color:#333;
-			margin:5px;
-			padding:8px 0;
-			text-align:center;
-		}	
+			margin:5px 0;
+			padding:1rem;
+		}
+		.warning {
+			background:#FFC371;
+			border:1px solid #f89406;
+			border-width:1px 0;
+			color:#333;
+			margin:5px 0;
+			padding:1rem;
+		}
 
 /* Structure 
 ================================================== */
@@ -338,11 +350,9 @@
 	    }
 	    .formitem .inp { 
 	    	width:66%;
-	    	
 	    }
 	    .formitem-split .inp { 
 	    	width:100%;
-	    	
 	    }
 	    .formitem .inp input,
 	    .formitem-split .inp input {
@@ -352,7 +362,7 @@
 	        border-radius:3px;
 	        color:#555;
 	        margin-bottom:9px;
-	        padding:0.5rem 0;
+	        padding: 0.4rem 0px;
 	        width:100%;
 	    }
 	    .formitem .inp input[type=checkbox],
@@ -361,11 +371,12 @@
 	    .formitem-split .inp input[type=radio] {
 	        width:1rem;
 	        height:1rem;
-	        margin:4px 1rem 0 0;
+	        padding:0;
+	        -moz-appearance: none;
+	        border-radius:px;
 	    }
-
 	    select {
-	    	padding:10% 10px;
+	    	padding:5px;
 	    	background-color: #FFF;
 	        border:1px solid #ccc;
 	        box-shadow:inset 0 1px 1px #F9F9F9;
@@ -376,93 +387,54 @@
 	    	padding-left:10%;
 	    	width:110%;
 	    }
-
 	    input[disabled] {
 	    	cursor:not-allowed;
 	    }
-
-	    /* Full form */
-		    .full-form .formitem, 
-		    .full-form .formitem-split { width:100%; }
-		    
-		    .full-form .formitem,
-		    .full-form .formitem-split { 
-		        padding:.25rem;
-		        margin-bottom:.25rem;
-		        margin-left:0;
-		    }
-			.full-form .formitem label,
-			.full-form .formitem-split label {
-		        display:none;
-		        padding:.25rem 1rem 0 0;
-		        width:100%;
-		    }
-		    .full-form .formitem label.show,
-			.full-form .formitem-split label.show {
-				display:block;
-				text-align:left;
-		    }
-		    .full-form .formitem .inp,
-		    .full-form .formitem-split .inp {
-		        width:100%;
-		    }
-		    .full-form .formitem .inp input,
-		    .full-form .formitem-split .inp input {
-		        background-color: #FFF;
-		        border:1px solid #ccc;
-		        box-shadow:inset 0 1px 1px #F9F9F9;
-		        border-radius:3px;
-		        color:#555;
-		        margin-bottom:9px;
-		    }
-		    .full-form .formitem-split .inp input[type=checkbox] {
-		        width:1rem;
-		        height:1rem;
-		        margin:4px 1rem 0 0;
-		    }
-
-	    /* Inline Form */
-		    .inline-form .formitem, 
-		    .inline-form .formitem-split { width:100%; }
-		    
-		    .inline-form .formitem,
-		    .inline-form .formitem-split { 
-		        padding:.25rem;
-		        margin:0;
-		        width:auto;
-		        display: inline-block;
-		    }
-			.inline-form .formitem label,
-			.inline-form .formitem-split label {
-		        display:none;
-		        padding:.25rem 1rem 0 0;
-		        width: auto;
-		    }
-		    .inline-form .formitem label.show,
-		    .inline-form .formitem-split label.show {
-				display: inline-block;
-		    }
-		    .inline-form .formitem .inp,
-		    .inline-form .formitem-split .inp {
-		        width:auto;
-		        display: inline-block;
-		    }
-		    .inline-form .formitem .inp input,
-		    .inline-form .formitem-split .inp input {
-		        background-color: #FFF;
-		        border:1px solid #ccc;
-		        box-shadow:inset 0 1px 1px #F9F9F9;
-		        border-radius:3px;
-		        color:#555;
-		        margin-bottom:9px;
-		        padding:0.4rem 0;
-		    }
-		    .inline-form .formitem-split .inp input[type=checkbox],
-	    	.inline-form .formitem-split .inp input[type=radio] {
-		        width:1rem;
-		        height:1rem;
-		        margin:4px 1rem 0 0;
-		    }
+	    .full-form .formitem,
+	    .full-form .formitem-split { 
+	        padding:.25rem;
+	        margin-bottom:.25rem;
+	        margin-left:0;
+	        width:100%;
+	    }
+	    .inline-form .formitem,
+	    .inline-form .formitem-split { 
+	        padding:.25rem;
+	        margin:0;
+	        width:auto;
+	        display: inline-block;
+	    }
+		.full-form .formitem label,
+		.full-form .formitem-split label,
+		.inline-form .formitem label,
+		.inline-form .formitem-split label {
+	        display:none;
+	        padding:.25rem 1rem 0 0;
+	        width:100%;
+	    }
+	    .inline-form .formitem label,
+		.inline-form .formitem-split label {
+	        width: auto;
+	    }
+	    .full-form .formitem label.show,
+		.full-form .formitem-split label.show {
+			display:block;
+			text-align:left;
+	    }
+	    .inline-form .formitem label.show,
+	    .inline-form .formitem-split label.show {
+			display: inline-block;
+	    }
+	    .full-form .formitem .inp,
+	    .full-form .formitem-split .inp {
+	        width:100%;
+	    }
+	    .inline-form .formitem .inp,
+	    .inline-form .formitem-split .inp {
+	        width:auto;
+	        display: inline-block;
+	    }
+	    
 
 	/* Tables */
 		table { 
@@ -519,11 +491,10 @@
 	/* Label */
 		.label {
 			padding:.1rem .3rem .2rem;
-			color: #fff;
 			font-size:.8rem;
 			vertical-align: middle;
-			background-color: #999;
-			margin:0;
+			margin:5px;
+			border:0;
 		}
 
 	/* Buttons */
