@@ -305,7 +305,10 @@
 	    }
 
   	/* Forms */
-	    .formitem, .formitem * { 
+	    .formitem, 
+	    .formitem-split,
+	    .inp,
+	    label { 
 	        -moz-box-sizing:border-box;
 			-webkit-box-sizing:border-box;
 			box-sizing:border-box;
@@ -313,62 +316,153 @@
 			margin-right:-.5em;
 			vertical-align:top;
 	    }
-	    .formitem { 
+	    .formitem {  
 	        width:100%;
-	        padding:5px;
-	        margin-bottom:7px;
+	        padding:.25rem;
+	        margin-bottom:.25rem;
+	    }
+	    .formitem-split {
+	    	width:66%;
+	        padding:.25rem;
+	        margin-bottom:.25rem;
+	        margin-left:33%;
 	    }
 		.formitem label {
 	        text-align:right;
-	        padding:5px 25px 0 0;
+	        padding:.25rem 1rem 0 0;
 	        width:33%;
 	    }
-	    .formitem .inp {
-	        width:66%;
+	    .formitem-split label {
+			text-align:left;
+			width:100%;
 	    }
-	    .formitem .inp input {
+	    .formitem .inp { 
+	    	width:66%;
+	    	
+	    }
+	    .formitem-split .inp { 
+	    	width:100%;
+	    	
+	    }
+	    .formitem .inp input,
+	    .formitem-split .inp input {
 	        background-color: #FFF;
 	        border:1px solid #ccc;
-	        box-shadow: inset 0 1px 1px #F9F9F9;
-	        border-radius: 3px;
-	        color: #555;
+	        box-shadow:inset 0 1px 1px #F9F9F9;
+	        border-radius:3px;
+	        color:#555;
 	        margin-bottom:9px;
-	        padding: 4px 6px;
+	        padding:0.5rem 0;
 	        width:100%;
-	        max-width:450px;
 	    }
-	    
-	    .formitem label.checkbox { 
-	        padding-left:20px; 
+	    .formitem .inp input[type=checkbox],
+	    .formitem .inp input[type=radio],
+	   	.formitem-split .inp input[type=checkbox],
+	    .formitem-split .inp input[type=radio] {
+	        width:1rem;
+	        height:1rem;
+	        margin:4px 1rem 0 0;
 	    }
-	    input[type=checkbox] {
-	        float:left;
-	        width:auto;
-	        margin:4px 0 0 -20px;
+
+	    select {
+	    	padding:10% 10px;
+	    	background-color: #FFF;
+	        border:1px solid #ccc;
+	        box-shadow:inset 0 1px 1px #F9F9F9;
+	        border-radius:3px;
+	        color:#555;
 	    }
-	    .formitem input[type=submit] {
-	        margin-left:33%;
+	    select[multiple=multiple] {
+	    	padding-left:10%;
+	    	width:110%;
 	    }
-	    input[type=submit], .btn { 
-	        background-color:#F5F5F5; 
-	        background-image:-webkit-linear-gradient(top, #FFFFFF, #E6E6E6);
-	        background-image:-moz-linear-gradient(top, #FFFFFF, #E6E6E6);
-	        background-image:-ms-linear-gradient(top, #FFFFFF, #E6E6E6);
-	        background-image:-o-linear-gradient(top, #FFFFFF, #E6E6E6);
-	        background-image:linear-gradient(to bottom, #FFFFFF, #E6E6E6);
-	        border:1px solid #dbdada;
-	        border-bottom: 1px solid #b6b6b6;
-	        border-radius: 4px;
-	        box-shadow: rgba(255, 255, 255, 0.196) 0 1px 0 0 inset, rgba(0, 0, 0, 0.047) 0 1px 2px 0;
-	        color: #333;
-	        cursor: pointer;
-	        display: inline-block;
-	        margin-bottom: 0;
-	        padding: 4px 14px;
-	        text-align: center;
-	        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.749);
-	        vertical-align: middle;
+
+	    input[disabled] {
+	    	cursor:not-allowed;
 	    }
+
+	    /* Full form */
+		    form.full-form .formitem, 
+		    form.full-form .formitem-split { width:100%; }
+		    
+		    form.full-form .formitem,
+		    form.full-form .formitem-split { 
+		        padding:.25rem;
+		        margin-bottom:.25rem;
+		        margin-left:0;
+		    }
+			form.full-form .formitem label,
+			form.full-form .formitem-split label {
+		        display:none;
+		        padding:.25rem 1rem 0 0;
+		        width:100%;
+		    }
+		    form.full-form .formitem label.show,
+			form.full-form .formitem-split label.show {
+				display:block;
+				text-align:left;
+		    }
+		    form.full-form .formitem .inp,
+		    form.full-form .formitem-split .inp {
+		        width:100%;
+		    }
+		    form.full-form .formitem .inp input,
+		    form.full-form .formitem-split .inp input {
+		        background-color: #FFF;
+		        border:1px solid #ccc;
+		        box-shadow:inset 0 1px 1px #F9F9F9;
+		        border-radius:3px;
+		        color:#555;
+		        margin-bottom:9px;
+		    }
+		    form.full-form .formitem-split .inp input[type=checkbox] {
+		        width:1rem;
+		        height:1rem;
+		        margin:4px 1rem 0 0;
+		    }
+
+	    /* Inline Form */
+		    form.inline-form .formitem, 
+		    form.inline-form .formitem-split { width:100%; }
+		    
+		    form.inline-form .formitem,
+		    form.inline-form .formitem-split { 
+		        padding:.25rem;
+		        margin:0;
+		        width:auto;
+		        display: inline-block;
+		    }
+			form.inline-form .formitem label,
+			form.inline-form .formitem-split label {
+		        display:none;
+		        padding:.25rem 1rem 0 0;
+		        width: auto;
+		    }
+		    form.inline-form .formitem label.show,
+		    form.inline-form .formitem-split label.show {
+				display: inline-block;
+		    }
+		    form.inline-form .formitem .inp,
+		    form.inline-form .formitem-split .inp {
+		        width:auto;
+		        display: inline-block;
+		    }
+		    form.inline-form .formitem .inp input,
+		    form.inline-form .formitem-split .inp input {
+		        background-color: #FFF;
+		        border:1px solid #ccc;
+		        box-shadow:inset 0 1px 1px #F9F9F9;
+		        border-radius:3px;
+		        color:#555;
+		        margin-bottom:9px;
+		        padding:0.4rem 0;
+		    }
+		    form.inline-form .formitem-split .inp input[type=checkbox],
+	    	form.inline-form .formitem-split .inp input[type=radio] {
+		        width:1rem;
+		        height:1rem;
+		        margin:4px 1rem 0 0;
+		    }
 
 	/* Tables */
 		table { 
@@ -441,7 +535,6 @@
 		    position: relative;
 		    display: inline-block;
 		    background: #EEE;
-		    margin-right:1rem;
 		    border:0;
 		    border-radius:0;
 		}

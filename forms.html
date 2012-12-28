@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Untitled Document</title>
+	<link rel="stylesheet" href="./assets/css/style.css"/>
+  <link rel="stylesheet" href="./assets/css/extras.css"/>
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<div class="box">
+    <div class="w100 pad">
+      <ul class="navigation horizontal">
+        <li><a href="index.html">Grid</a></li>
+        <li><a href="extras.html">Extras</a></li>
+        <li><a href="forms.html">Forms</a></li>
+        <li><a href="addons.html">Addons</a></li>
+      </ul> 
+    	<h1>Forms</h1>
+
+      <p>All forms have a structure similar to</p>
+      <pre>
+        &lt;form&gt;
+          &lt;div class="formitem"&gt;
+            &lt;label for="input1">Name&lt;/label&gt;
+            &lt;div class="inp"&gt;
+              &lt;input type="text" id="input1"&gt;
+            &lt;/div&gt;
+            &lt;div class="inp"&gt;
+              &lt;input type="submit" class="button" value="Submit"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;</pre>
+
+      <p><code>&lt;div class="formitem"&gt;</code> can be replaced with <code>&lt;div class="formitem-split"&gt;</code> to only take up the right side of the area. See the example below.
+
+
+      <h2>Basic Form item</h2>
+      <form>
+        <div class="formitem">
+          <label for="inputEmail">Email</label>
+          <div class="inp">
+            <input type="text" id="inputEmail">
+          </div>
+        </div>
+        <div class="formitem">
+          <label for="inputPassword">Password</label>
+          <div class="inp">
+            <input type="password" id="inputPassword">
+          </div>
+        </div>
+        <div class="formitem-split">
+          <div class="inp">
+            <label class="show">
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+        </div>
+        <div class="formitem-split">
+          <input type="submit" class="button" value="Submit">
+        </div>
+      </form>
+
+      <pre>
+        &lt;form&gt;
+          &lt;div class="formitem"&gt;
+            &lt;label for="inputEmail"&gt;Email&lt;/label&gt;
+            &lt;div class="inp"&gt;
+              &lt;input type="text" id="inputEmail"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="formitem"&gt;
+            &lt;label for="inputPassword"&gt;Password&lt;/label&gt;
+            &lt;div class="inp"&gt;
+              &lt;input type="password" id="inputPassword"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="formitem-split"&gt;
+            &lt;div class="inp"&gt;
+              &lt;label class="show"&gt;
+                &lt;input type="checkbox"&gt; Remember me
+              &lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="formitem-split"&gt;
+            &lt;input type="submit" class="button" value="Submit"&gt;
+          &lt;/div&gt;
+        &lt;/form&gt;</pre>
+      
+
+      <h2>Inline forms</h2>
+      <form class="inline-form">
+        <div class="formitem">
+          <label for="inputEmail">Email</label>
+          <div class="inp">
+            <input type="text" id="inputEmail">
+          </div>
+        </div>
+        <div class="formitem">
+          <label for="inputPassword">Password</label>
+          <div class="inp">
+            <input type="password" id="inputPassword">
+          </div>
+        </div>
+        <div class="formitem-split">
+          <div class="inp">
+            <label class="show">
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+        </div>
+        <div class="formitem">
+          <label for="inputEmail">Email</label>
+          <div class="inp">
+            <input type="text" id="inputEmail">
+          </div>
+        </div>
+        <div class="formitem">
+          <label for="inputPassword">Password</label>
+          <div class="inp">
+            <input type="password" id="inputPassword">
+          </div>
+        </div>
+        <div class="formitem-split">
+          <div class="inp">
+            <label class="show">
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+        </div>
+        <div class="formitem-split">
+          <button type="submit" class="button">Sign in</button>
+        </div>
+      </form>
+      <pre>
+        &lt;form class="inline-form"&gt;
+        ....
+      </pre>
+
+      <h2>Full Width Forms</h2>
+      <form class="full-form">
+        <div class="formitem">
+          <label for="inputEmail">Email</label>
+          <div class="inp">
+            <input type="text" id="inputEmail">
+          </div>
+        </div>
+        <div class="formitem">
+          <label for="inputPassword">Password</label>
+          <div class="inp">
+            <input type="password" id="inputPassword">
+          </div>
+        </div>
+        <div class="formitem-split">
+          <div class="inp">
+            <label class="show">
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+        </div>
+        <div class="formitem-split">
+          <button type="submit" class="button">Sign in</button>
+        </div>
+      </form>
+      <pre>
+        &lt;form class="full-form"&gt;
+        ....
+      </pre>
+
+      <h2>Checkbox</h2>
+      <p>On checkboxes make sure the label has <code>class="show"</code>. This is needed because on <code>.full-form</code> and <code>.inline-form</code> labels are hidden. however checkbox labels still need to be visible.</p>
+      <form class="full-form">
+        <div class="formitem">
+          <div class="inp">
+            <label class="show">
+              <input type="checkbox" value="">Option one is this and that—be sure to include why it's great
+            </label>
+          </div>
+        </div>
+        <div class="formitem">
+          <div class="inp">
+            <label class="show">
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              Option one is this and that—be sure to include why it's great
+            </label>
+          </div>
+        </div>
+        <div class="formitem">
+          <div class="inp">
+            <label class="show">
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+              Option two can be something else and selecting it will deselect option one
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <h2>Checkbox Inline</h2>
+      <form class="inline-form">
+        <div class="formitem-split">
+          <div class="inp">
+            <label class="show">
+              <input type="checkbox" value="option1"> 1
+            </label>
+          </div>
+        </div>
+        <div class="formitem-split">
+          <div class="inp">
+            <label class="show">
+              <input type="checkbox" value="option2"> 2
+            </label>
+          </div>
+        </div>
+        <div class="formitem-split">
+          <div class="inp">
+            <label class="show">
+              <input type="checkbox" value="option3"> 3
+            </label>
+          </div>
+        </div>
+      </form>
+      <h2>Select</h2>
+      <form class="inline-form">
+        <div class="formitem-split">
+          <div class="inp">
+            <select>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+        <div class="formitem-split">
+          <div class="inp">
+            <select multiple="multiple">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+      </form>
+
+      <h2>Other</h2>
+      <form class="inline-form">
+        <div class="formitem">
+          <div class="inp">
+            <input type="text">
+          </div>
+        </div>
+        <div class="formitem">
+          <div class="inp">
+            <button class="button" type="button">Go!</button>
+          </div>
+        </div>
+      </form>
+
+      <form class="inline-form">
+        <div class="formitem">
+          <div class="inp">
+            <button class="button" type="button">Go!</button>
+          </div>
+        </div>
+        <div class="formitem">
+          <div class="inp">
+            <input class="input3" type="text">
+          </div>
+        </div>
+      </form>
+
+      <form class="inline-form">
+        <div class="formitem">
+          <div class="inp">
+            <input type="text">
+          </div>
+        </div>
+        <div class="formitem">
+          <div class="inp">
+            <button class="button" type="button">Search</button>
+            <button class="button" type="button">Options</button>
+          </div>
+        </div>
+      </form>
+
+      <form class="inline-form">
+        <div class="formitem-split">
+          <div class="inp">
+            <input type="text" placeholder="Disabled input" disabled>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
