@@ -9,6 +9,7 @@
   <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 </head>
 <body>
+  <form>
 	<div class="box">
     <div class="w100 pad">
       <ul class="navigation horizontal">
@@ -37,7 +38,6 @@
 
 
       <h2>Basic Form item</h2>
-      <form>
         <div class="formitem">
           <label for="inputEmail">Email</label>
           <div class="inp">
@@ -50,6 +50,12 @@
             <input type="password" id="inputPassword">
           </div>
         </div>
+        <div class="formitem">
+          <label for="contact-message">Message</label>
+          <div class="inp">
+            <textarea name="contact-message" id="contact-message" rows="4"></textarea>
+          </div>
+        </div>
         <div class="formitem-split">
           <div class="inp">
             <label class="show">
@@ -60,7 +66,6 @@
         <div class="formitem-split">
           <input type="submit" class="button" value="Submit">
         </div>
-      </form>
 
       <pre>
         &lt;form&gt;
@@ -90,56 +95,56 @@
       
 
       <h2>Inline forms</h2>
-      <form class="inline-form">
-        <div class="formitem">
-          <label for="inputEmail">Email</label>
-          <div class="inp">
-            <input type="text" id="inputEmail">
+        <div class="inline-form">
+          <div class="formitem">
+            <label for="inputEmail">Email</label>
+            <div class="inp">
+              <input type="text" id="inputEmail">
+            </div>
+          </div>
+          <div class="formitem">
+            <label for="inputPassword">Password</label>
+            <div class="inp">
+              <input type="password" id="inputPassword">
+            </div>
+          </div>
+          <div class="formitem-split">
+            <div class="inp">
+              <label class="show">
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+          <div class="formitem">
+            <label for="inputEmail">Email</label>
+            <div class="inp">
+              <input type="text" id="inputEmail">
+            </div>
+          </div>
+          <div class="formitem">
+            <label for="inputPassword">Password</label>
+            <div class="inp">
+              <input type="password" id="inputPassword">
+            </div>
+          </div>
+          <div class="formitem-split">
+            <div class="inp">
+              <label class="show">
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+          <div class="formitem-split">
+            <button type="submit" class="button">Sign in</button>
           </div>
         </div>
-        <div class="formitem">
-          <label for="inputPassword">Password</label>
-          <div class="inp">
-            <input type="password" id="inputPassword">
-          </div>
-        </div>
-        <div class="formitem-split">
-          <div class="inp">
-            <label class="show">
-              <input type="checkbox"> Remember me
-            </label>
-          </div>
-        </div>
-        <div class="formitem">
-          <label for="inputEmail">Email</label>
-          <div class="inp">
-            <input type="text" id="inputEmail">
-          </div>
-        </div>
-        <div class="formitem">
-          <label for="inputPassword">Password</label>
-          <div class="inp">
-            <input type="password" id="inputPassword">
-          </div>
-        </div>
-        <div class="formitem-split">
-          <div class="inp">
-            <label class="show">
-              <input type="checkbox"> Remember me
-            </label>
-          </div>
-        </div>
-        <div class="formitem-split">
-          <button type="submit" class="button">Sign in</button>
-        </div>
-      </form>
       <pre>
-        &lt;form class="inline-form"&gt;
+        &lt;div class="inline-form"&gt;
         ....
       </pre>
 
       <h2>Full Width Forms</h2>
-      <form class="full-form">
+      <div class="full-form">
         <div class="formitem">
           <label for="inputEmail">Email</label>
           <div class="inp">
@@ -162,15 +167,14 @@
         <div class="formitem-split">
           <button type="submit" class="button">Sign in</button>
         </div>
-      </form>
       <pre>
-        &lt;form class="full-form"&gt;
+        &lt;div class="full-form"&gt;
         ....
       </pre>
 
       <h2>Checkbox</h2>
       <p>On checkboxes make sure the label has <code>class="show"</code>. This is needed because on <code>.full-form</code> and <code>.inline-form</code> labels are hidden. however checkbox labels still need to be visible.</p>
-      <form class="full-form">
+      <div class="full-form">
         <div class="formitem">
           <div class="inp">
             <label class="show">
@@ -194,10 +198,10 @@
             </label>
           </div>
         </div>
-      </form>
+      </div>
 
       <h2>Checkbox Inline</h2>
-      <form class="inline-form">
+      <div class="inline-form">
         <div class="formitem-split">
           <div class="inp">
             <label class="show">
@@ -219,9 +223,9 @@
             </label>
           </div>
         </div>
-      </form>
+      </div>
       <h2>Select</h2>
-      <form class="inline-form">
+      <div class="inline-form">
         <div class="formitem-split">
           <div class="inp">
             <select>
@@ -244,10 +248,10 @@
             </select>
           </div>
         </div>
-      </form>
+      </div>
 
       <h2>Other</h2>
-      <form class="inline-form">
+      <div class="inline-form">
         <div class="formitem">
           <div class="inp">
             <input type="text">
@@ -258,9 +262,9 @@
             <button class="button" type="button">Go!</button>
           </div>
         </div>
-      </form>
+      </div>
 
-      <form class="inline-form">
+      <div class="inline-form">
         <div class="formitem">
           <div class="inp">
             <button class="button" type="button">Go!</button>
@@ -271,9 +275,9 @@
             <input class="input3" type="text">
           </div>
         </div>
-      </form>
+      </div>
 
-      <form class="inline-form">
+      <div class="inline-form">
         <div class="formitem">
           <div class="inp">
             <input type="text">
@@ -285,16 +289,41 @@
             <button class="button" type="button">Options</button>
           </div>
         </div>
-      </form>
+      </div>
 
-      <form class="inline-form">
+      <div class="inline-form">
         <div class="formitem-split">
           <div class="inp">
             <input type="text" placeholder="Disabled input" disabled>
           </div>
         </div>
-      </form>
+      </div>
+
+      <h2>Form Validation</h2>
+      <div class="full-form">
+        <div class="formitem">
+          <label for="inputEmail">Name</label>
+          <div class="inp">
+            <input type="text" id="inputName" class="error" placeholder="Error">
+          </div>
+        </div>
+        <div class="formitem">
+          <label for="inputEmail">Email</label>
+          <div class="inp">
+            <input type="text" id="inputEmail" class="success" placeholder="Success">
+          </div>
+        </div>
+        <div class="formitem">
+          <label for="inputPassword">Password</label>
+          <div class="inp">
+            <input type="password" id="inputPassword" class="warning" placeholder="Warning">
+          </div>
+        </div>
+        <div class="formitem-split">
+          <button type="submit" class="button">Sign in</button>
+        </div>
     </div>
   </div>
+  </form>
 </body>
 </html>
